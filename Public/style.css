@@ -110,6 +110,8 @@ section{
 
 .logo{
     width: 10%;
+    bottom: 0;
+    position:fixed;
 }
 div.container {
     margin: 60px auto;
@@ -188,8 +190,3 @@ li>img {
     width: 100%;
     height: 100%;
 }
-li>p{
-    text-align: center;
-}
-
-
