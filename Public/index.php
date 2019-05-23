@@ -22,7 +22,7 @@
     <?php
     require_once(__DIR__.'/../src/php/menu.php');
     require_once(__DIR__.'/../src/php/home.php');
-    require_once(__DIR__.'/../src/php/formation.php');
+    require_once(__DIR__.'/../src/php/formations.php');
     require_once(__DIR__.'/../src/php/experiences.php');
     require_once(__DIR__.'/../src/php/portfolio.php');
     require_once(__DIR__.'/../src/php/contact.php');?>
