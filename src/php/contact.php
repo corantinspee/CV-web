@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../src/css/contact.css">
 <section id="contact">
     <div class="ligne maxwidth spaceevenly">
         <div class="sectionTitle">Contact</div>
