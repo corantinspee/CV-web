@@ -1,3 +1,20 @@
+<?php
+$connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
+
+/* SELECT */
+$insertionCV = $connectionCV->exec('');
+
+$statement= $connectionCV->prepare('SELECT * FROM contact WHERE 
+name = :');
+$statement->execute();
+
+$allResults =$statement->fetchAll();
+
+while($row = $statement->fetch()){
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +23,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/../src/css/contact.css">
-    <link rel="stylesheet" href="/../src/css/formations.css">
 </head>
 <body>
     <?php

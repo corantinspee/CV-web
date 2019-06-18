@@ -1,0 +1,13 @@
+{
+    "name": "corantin/cv-web",
+    "type": "project",
+    "authors": [
+        {
+            "name": "corantin",
+            "email": "corantin.spee@ynov.com"
+        }
+    ],
+    "require": {
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}
