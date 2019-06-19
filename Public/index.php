@@ -2,17 +2,17 @@
 $connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
 
 /* SELECT */
-$insertionCV = $connectionCV->exec('');
+// $insertionCV = $connectionCV->exec('');
 
-$statement= $connectionCV->prepare('SELECT * FROM contact WHERE 
-name = :');
-$statement->execute();
+// $statement= $connectionCV->prepare('SELECT * FROM contact WHERE 
+// name = :');
+// $statement->execute();
 
-$allResults =$statement->fetchAll();
+// $allResults =$statement->fetchAll();
 
-while($row = $statement->fetch()){
+// while($row = $statement->fetch()){
 
-}
+// }
 ?>
 
 <!DOCTYPE html>

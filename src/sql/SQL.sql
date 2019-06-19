@@ -1,5 +1,5 @@
 /* CREATION DES TABLES*/
-
+DROP TABLE IF EXISTS contact;
 CREATE TABLE contact (
     id_contact int(11) NOT NULL,
     adresse_mail varchar(255) NOT NULL,
@@ -10,8 +10,8 @@ CREATE TABLE contact (
     PRIMARY KEY (id_contact)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1
 
-
-CREATE TABLE Formations (
+DROP TABLE IF EXISTS formations;
+CREATE TABLE formations (
     id_formations int(11) NOT NULL,
     adresse varchar(255) NOT NULL,
     nom varchar(255) NOT NULL,
@@ -20,19 +20,20 @@ CREATE TABLE Formations (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1
 
 
-
-CREATE TABLE Competences (
-    id_Competences int(11) NOT NULL,
+DROP TABLE IF EXISTS competences;
+CREATE TABLE competences (
+    id_competences int(11) NOT NULL,
+    categorie VARCHAR(255) not NULL,
     domaine varchar(255) NOT NULL,
     nom varchar(255) NOT NULL,
     niveau_competences varchar(255) NOT NULL,
-    PRIMARY KEY (id_Competences)
+    PRIMARY KEY (id_competences)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1
 
 
 /* INSERTION DES DONNEES*/
 
-INSERT INTO Competences (nom,categorie, domaine,niveau_competences)
+INSERT INTO competences (nom,categorie, domaine,niveau_competences)
 VALUES
 ('CCNA','matiere', 'informatique', '10%'),
 ('linux','matiere','informatique', '10%'),
@@ -51,7 +52,7 @@ VALUES
 ('Durand Mathieu', 'Saint-Didier-au-mont-d-or', 'YNOV','durandmathieu@lol.com','De qui patiemur simularit ille quam ferri perire civibus existimaretur qui potuit diutius diutius quam.'),
 ('Dupont Albert', 'lantignie', 'YNOV','dupontalbert@lol.com','De qui patiemur simularit ille quam ferri perire civibus existimaretur qui potuit diutius diutius quam.');
 
-INSERT INTO Formations (nom, ville,adresse)
+INSERT INTO formations (nom, ville,adresse)
 VALUES
 ('Lamache', 'Lyon', '75 bld jean XXIII'),
 ('Ynov', 'Lyon', '36 rue raoul servant');
