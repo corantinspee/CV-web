@@ -136,7 +136,7 @@ section{
 
 .logo{
     width: 10%;
-    bottom: 0;
+    align-content: center;
     position:relative;
 }
 div.container {

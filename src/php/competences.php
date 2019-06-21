@@ -10,10 +10,12 @@ while ($competence = $statement->fetch())
 {
 ?>
     <p>
-    <strong>Jeu</strong> : <?php echo $competence['nom']; ?><br />
-    <?php echo $competence['possesseur'];echo $competence['prix']; ?><br />
-    <?php echo $competence['console'];echo $competence['nbre_joueurs_max']; ?><br />
-    <?php echo $competence['possesseur']; echo $donnees['nom']; echo $competence['commentaires']; ?>
+    <strong>Jeu</strong> : 
+    <?php echo $competence['categorie']; 
+    echo $competence['domaine'];
+    echo $competence['nom'];    
+    echo $competence['niveau_competences'];
+    ?>
    </p>
 <?php
 }
