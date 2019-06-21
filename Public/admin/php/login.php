@@ -1,17 +1,38 @@
 <?php
+require_once ('../../../src/php/mdp.php');
 session_start();
-$admineEmail = "cornaitn.spee@ynov.com";
-$adminPassword = "Administrateur001";
 
-if(
-  $admineEmail===$_POST['email']
-
-  && $adminPassword=== $_POST['pasword'])
+function is_email_valid(string $email): bool
 {
-print 'OK';
+    $pattern = '/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\..[a-zA-Z0-9]+$/';
+    if (preg_match($pattern, $email)) {
+      return true;
+    }
+    
+    return  false;
 }
-else{
-  print 'pas OK'; 
+
+// est-ce que j'ai un formulaire
+if (count($_POST) === 2) {
+  $adminEmail = $user_mail;
+  $adminPassword = $pswd_mail;
+
+  if (!is_email_valid($_POST['email'])) {
+    die('Email invalide.');
+  }
+ 
+  // est-ce que mes logins sont valides
+  if (
+    $adminEmail === $_POST['email']
+    && $adminPassword === sha1(md5('TOTO'.$_POST['password']))
+  ) {
+    $_SESSION['is_logged_in'] = true;
+  
+    header('Location: http://'.$_SERVER['HTTP_HOST'].'/admin/index.php');
+    exit();
+  } else if(isset($errorMessage)) {
+    $errorMessage = 'Mauvais indentifiant mec.';
+  }
 }
 
 ?>
