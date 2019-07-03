@@ -1,8 +1,8 @@
 <?php
 // require_once('PDO.php');
-$connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
-$statement= $connectionCV->prepare('INSERT * FROM competences');
-$competence = $statement->fetch()
+// $connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
+// $statement= $connectionCV->prepare('INSERT * FROM competences');
+// $competence = $statement->fetch()
 ?>
 
 
@@ -33,7 +33,7 @@ $competence = $statement->fetch()
         </div>
     </div> 
     <?php 
-    $connectionCV->exec('INSERT INTO contact (nom_prenom, adresse_mail,entreprise,ville,message )
-    VALUES($nom,$mail,$entreprise,$ville,$message )');
+    // $connectionCV->exec('INSERT INTO contact (nom_prenom, adresse_mail,entreprise,ville,message )
+    // VALUES($nom,$mail,$entreprise,$ville,$message )');
     ?>     
 </section>

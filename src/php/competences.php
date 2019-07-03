@@ -1,12 +1,12 @@
 <?php
-$connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
+// $connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
 
 
 ?>
 <section id="competences">
         <div class="sectionTitle">Competences</div>
         <div class="ligne maxwidth spaceevenly">
-        <div class="categories">
+        <div class="caractere">
                 <h2>Langages</h2>
                 <p>CCNA 50%</p>
                 <p>linux 50%</p>
@@ -17,7 +17,7 @@ $connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
                 </p>
         </div>
         <div class="ligne maxwidth spaceevenly">
-        <div class="categories">
+        <div class="caractere">
                 <h2>Logiciels</h2>
                 <p>Cisco Packet</p>
                 <p>VmWare</p>

@@ -1,5 +1,5 @@
 <?php
-$connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
+// $connectionCV = new \PDO('mysql:hostname=localhost;dbname=CV-Web','root','');
 
 /* SELECT */
 // $insertionCV = $connectionCV->exec('');
