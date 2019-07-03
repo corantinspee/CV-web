@@ -2,36 +2,22 @@
 require_once ('../../../src/php/mdp.php');
 session_start();
 
-function is_email_valid(string $email): bool
-{
-    $pattern = '/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\..[a-zA-Z0-9]+$/';
-    if (preg_match($pattern, $email)) {
-      return true;
-    }
-    
-    return  false;
-}
-
 // est-ce que j'ai un formulaire
 if (count($_POST) === 2) {
   $adminEmail = $user_mail;
   $adminPassword = $pswd_mail;
-
-  if (!is_email_valid($_POST['email'])) {
-    die('Email invalide.');
-  }
  
   // est-ce que mes logins sont valides
   if (
     $adminEmail === $_POST['email']
-    && $adminPassword === sha1(md5('TOTO'.$_POST['password']))
+    && $adminPassword === $_POST['password']
   ) {
     $_SESSION['is_logged_in'] = true;
   
     header('Location: http://'.$_SERVER['HTTP_HOST'].'/admin/index.php');
     exit();
-  } else if(isset($errorMessage)) {
-    $errorMessage = 'Mauvais indentifiant mec.';
+  } else {
+    $errorMessage = 'veuillez entrer un compte valide !!';
   }
 }
 
@@ -76,18 +62,28 @@ if (count($_POST) === 2) {
     </head>
 
     <body class="text-center">
-        <form novalidate="novalidate" action="http://cv-web/admin/index.php" method="POST" class="form-signin">
+    <div class="container">
+      <?php if (isset($errorMessage)) { ?>
+        <div class="row">
+          <div class="col-md-4 mx-auto">
+          <div class="alert alert-danger" role="alert">
+            <?= $errorMessage; ?>
+          </div>
+        </div>
+        </div>
+      <?php } ?>
+        <form novalidate="novalidate" action="http://cv-web/admin/php/login.php" method="POST" class="form-signin">
             <img class="mb-4" src="../../img/network.jpg" alt="" width="80" height="80">
             <h1 class="h3 mb-3 font-weight-normal">Qui etes vous ?</h1>
             <label for="inputEmail" class="sr-only">Adresse Mail</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputPassword" class="sr-only">Mot de Passe</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter </button>
             <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
         </form>
-        <a href="http://cv-web/admin/php/fake_login.php">Admin</a>
+    </div>
     </body>
 
     </html>
